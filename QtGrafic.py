@@ -157,7 +157,6 @@ class MainWindow(QtWidgets.QWidget):
                 sys.exit(0)
 
     def simulation_init_(self):
-        #self.solar = SolarSystem(self.zoom)
         self.solar = RandomSolar(self.zoom)
     
     def simulation_update_(self):
