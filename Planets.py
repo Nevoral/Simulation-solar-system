@@ -39,24 +39,6 @@ def RandomSolar(length):
         solar.append(k)
     return solar
 
-def SolarSystem(length):
-    planets = np.array(['Slunce', 'Merkur', 'Venuše', 'Země', 'Mars', 'Jupite', 'Saturn', 'Uran', 'Neptun'])
-    mass = np.array([1.989*10**30, 3.287*10**23, 4.867*10**24, 5.972*10**24, 6.39*10**23, 1.898*10**27, 5.683*10**26, 8.681*10**25, 1.024*10**26])
-    dist = np.array([0, 57.91*10**9, 108.2*10**9, 149.6*10**9, 227.9*10**9, 778.5*10**9, 1.434*10**12, 2.871*10**12, 4.495*10**12])
-    vel = np.array([0, 170503/3.6, 130074/3.6, 107218/3.6, 86677/3.6, 47002/3.6, 34701/3.6,24477/3.6, 19566/3.6])
-    theta = np.array([90, 90, 90, 90, 90, 90, 90, 90, 90])
-    phi = np.array([0, 245, 295, 198, 166, 97, 75, 212, 130])
-    solar = []
-    for i in range(len(planets)):
-        hanicka = PositionKartez(dist[i], theta[i], phi[i])
-        vector = OnesVector(np.array([0.0,0.0,0.0]), hanicka)
-        velocity = np.array([vel[i]*vector[1], -vel[i]*vector[0], vel[i]*vector[2]])
-        k = Planet(planets[i], mass[i], dist[i], phi[i], theta[i], hanicka, velocity, np.zeros(3))
-        k.randColor()
-        k.grafPosition(length)
-        solar.append(k)
-    return solar
-
 def SolarSystemLook(system, length):
     for i in system:
         i.grafPosition(length)
