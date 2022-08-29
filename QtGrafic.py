@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from GraficPlanet import GraficPlanet
-from Planets import RandomSolar, SolarSystem, CountForces, CountNewPosition, SolarSystemLook
+from Planets import RandomSolar, CountForces, CountNewPosition, SolarSystemLook
 
 class MainWindow(QtWidgets.QWidget):
     def __init__(self, parent=None):
